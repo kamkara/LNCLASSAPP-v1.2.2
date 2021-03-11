@@ -26,6 +26,11 @@ gem 'jbuilder', '~> 2.7'
 
 ################## STYLES ###############
 gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
+gem 'bootstrap', '~> 5.0.0.beta2'
+
+
+########### JS ###############
+gem 'jquery-rails', '~> 4.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
