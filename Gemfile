@@ -61,11 +61,11 @@ gem 'jquery-rails', '~> 4.4'
 #gem 'prophet-rb' #forecast chart
 
 ################  URLS ################
-gem 'friendly_id'
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 
 
 ####################    MEMBERSHIP ######################
-gem "devise"
+gem 'devise', '~> 4.7', '>= 4.7.3'
 #gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
 #gem 'devise-i18n-views', '~> 0.3.7'
 #gem 'devise_invitable', '~> 2.0', '>= 2.0.3'
@@ -88,6 +88,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'solargraph'
+  gem 'rubocop'
+  gem "better_errors"
+  
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
