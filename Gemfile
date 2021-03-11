@@ -32,6 +32,50 @@ gem 'bootstrap', '~> 5.0.0.beta2'
 ########### JS ###############
 gem 'jquery-rails', '~> 4.4'
 
+
+################  UX/UI ################
+#gem 'time_ago_in_words', '~> 0.1.1'
+#gem 'acts_as_votable', '~> 0.12.1'
+#gem 'impressionist', '~> 2.0'
+
+
+################### REAL TIME && REACIVE APP ############################
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+#gem 'anycable', '~> 1.0', '>= 1.0.1'
+#gem 'view_component', '~> 2.22', '>= 2.22.1'
+#gem 'view_component_reflex', '~> 2.6', '>= 2.6.2'
+#gem 'cable_ready', '~> 4.4'
+#gem 'stimulus_reflex', '~> 3.3'
+#gem 'optimism', '~> 0.3.5'
+#gem 'futurism', '~> 0.6.0'
+
+
+
+################  ANALYTICS && BI ################
+#https://www.ginkonote.com/fr/utilisateurs/flo/articles/meilleurs-gems-rails-et-comment-bien-les-utiliser@rails
+#gem 'ahoy_email'
+#gem 'ahoy_matey' #tracking in app action and event
+#gem 'blazer' # created smart dashboard in app
+#gem 'pghero' # queries
+#gem 'prophet-rb' #forecast chart
+
+################  URLS ################
+gem 'friendly_id'
+
+
+####################    MEMBERSHIP ######################
+gem "devise"
+#gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
+#gem 'devise-i18n-views', '~> 0.3.7'
+#gem 'devise_invitable', '~> 2.0', '>= 2.0.3'
+
+group :production do
+# Use Unicorn as the app server
+ gem 'rack-timeout', '~> 0.6.0'
+ gem 'unicorn', '~> 5.8'
+end
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
