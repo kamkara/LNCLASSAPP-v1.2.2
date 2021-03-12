@@ -29,6 +29,9 @@ gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
 gem 'bootstrap', '~> 5.0.0.beta2'
 
 
+########### FORMS ###############
+gem 'bootstrap_form', '~> 4.5'
+
 ########### JS ###############
 gem 'jquery-rails', '~> 4.4'
 
