@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @citytown.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @citytown.slug %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @citytown.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_citytown_path(@citytown) %> |
+<%= link_to 'Back', citytowns_path %>
