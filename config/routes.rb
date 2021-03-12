@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :citytowns
+  resources :citytowns do
+    resources :schools
+      
+  end
+  
   resources :materials
   get 'accounted/student'
   get 'accounted/teacher'

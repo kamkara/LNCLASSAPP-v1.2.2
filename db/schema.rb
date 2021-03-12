@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_091104) do
+ActiveRecord::Schema.define(version: 2021_03_12_105615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "citytowns", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_citytowns_on_user_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -45,6 +54,21 @@ ActiveRecord::Schema.define(version: 2021_03_12_091104) do
     t.index ["user_id"], name: "index_materials_on_user_id"
   end
 
+  create_table "schools", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "sigle"
+    t.string "type"
+    t.string "slug"
+    t.uuid "city_manager_id"
+    t.string "size"
+    t.uuid "citytown_id", null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["citytown_id"], name: "index_schools_on_citytown_id"
+    t.index ["user_id"], name: "index_schools_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,8 +85,8 @@ ActiveRecord::Schema.define(version: 2021_03_12_091104) do
     t.string "full_name"
     t.string "first_name"
     t.string "last_name"
-    t.uuid "city"
-    t.uuid "school_id"
+    t.string "city"
+    t.string "school_name"
     t.string "matricule"
     t.uuid "level_id"
     t.uuid "material_id"
@@ -80,6 +104,9 @@ ActiveRecord::Schema.define(version: 2021_03_12_091104) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "citytowns", "users"
   add_foreign_key "levels", "users"
   add_foreign_key "materials", "users"
+  add_foreign_key "schools", "citytowns"
+  add_foreign_key "schools", "users"
 end

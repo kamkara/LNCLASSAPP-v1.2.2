@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     added_attrs = [:email, :full_name, :first_name, :last_name,
       :phone_contact, :whatsapp_contact, :matricule,
-      :role, :city, :school_code, :school_name, :class_name,
+      :role, :city, :school_name, :class_name,
       :level_id, :material_id, :gender, :avatar, :slug]
 
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
