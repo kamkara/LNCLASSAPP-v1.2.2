@@ -1,6 +1,6 @@
 class MaterialsController < ApplicationController
   
-  before_action :autheneticate_user!
+  before_action :authenticate_user!
   before_action :set_material, only: %i[ show edit update destroy ]
 
   # GET /materials or /materials.json
@@ -10,6 +10,15 @@ class MaterialsController < ApplicationController
 
   # GET /materials/1 or /materials/1.json
   def show
+    @materials = Material.all
+    if current_user.role == "student"
+      #only course content for either student level
+      @courses = Course.where('material_id = ? and level_id = ?',
+                        @material.id, @current_user.level_id).order('created_at DESC')
+
+    elsif current_user.role == "teacher" || current_user.role == "team"
+      @courses   =Course.all.order('created_at DESC')
+    end
   end
 
   # GET /materials/new

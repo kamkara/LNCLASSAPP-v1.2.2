@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashoard/index'
+  get 'dashboard/index'
   get 'profile/index'
   resources :citytowns do
     resources :schools

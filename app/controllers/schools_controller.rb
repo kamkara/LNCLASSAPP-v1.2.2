@@ -1,8 +1,8 @@
 class SchoolsController < ApplicationController
    
-  before_action :auhtenticate_user!
+  before_action :authenticate_user!
    before_action :set_school, only: %i[ show edit update destroy ]
-   before_action :set_citytown
+   before_action :set_citytowns
 
   # GET /schools or /schools.json
   def index
@@ -63,6 +63,9 @@ class SchoolsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_school
       @school =@citytown.schools.friendly.find(params[:id])
+    end
+     def set_citytowns
+      @citytown = current_user.citytowns.friendly.find(params[:citytown_id])
     end
 
     # Only allow a list of trusted parameters through.
