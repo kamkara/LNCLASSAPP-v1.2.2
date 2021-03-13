@@ -3,7 +3,8 @@ class HomesController < ApplicationController
   before_action :find_materials
 
   def index
-    
+    @materials = Material.all.order('created_at desc')
+    @courses   = Course.all.order('created_at desc')
   end
 
 

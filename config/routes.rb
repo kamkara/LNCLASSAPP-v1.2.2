@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :courses
   get 'dashboard/index'
   get 'profile/index'
   resources :citytowns do
