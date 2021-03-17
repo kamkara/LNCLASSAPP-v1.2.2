@@ -1,16 +1,15 @@
 <!--  j'ai preferé dupliquer le code ici pour faciliter la maintenance-->
 <% if current_user.role === "teacher"  %>
-<!-- teacher dashbaord-->
-<% content_for @title="Espace Enseignant" %>
+    <!-- teacher dashbaord-->
+    <% content_for @title="Espace Enseignant" %>
 
-<%= render "dashboard/shared/teachers/aside" %>
-<%= render "dashboard/shared/teachers/admin_main" %>
+    <%= render "dashboard/shared/teachers/aside" %>
+    <%= render "dashboard/shared/teachers/admin_main" %>
 <% else %>
-<!-- team dashbaord-->
-<!-- teacher dashbaord-->
-<% content_for @title="ADMINISTRATION" %>
+    <!-- teacher dashbaord-->
+    <% content_for @title="ADMINISTRATION" %>
 
-<%= render "dashboard/shared/teams/aside" %>
-<%= render "dashboard/shared/teams/admin_main" %>
+    <%= render "dashboard/shared/teams/aside" %>
+    <%= render "dashboard/shared/teams/admin_main" %>
 
 <% end %>

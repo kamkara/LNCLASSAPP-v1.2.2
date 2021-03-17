@@ -7,9 +7,8 @@
             </button>
             <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
             <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
-                    <a href="#" class="block px-4 py-2 account-link hover:text-white">Mon Compte</a>
-                    <a href="#" class="block px-4 py-2 account-link hover:text-white">Support</a>
-                    <a href="#" class="block px-4 py-2 account-link hover:text-white">Déconnexion</a>
+                <%= link_to 'Compte', edit_user_registration_path(@user), class:"block px-4 py-2 account-link hover:text-white" %>
+                <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class:"block px-4 py-2 account-link hover:text-white" %>
             </div>
         </div>
 </header>
