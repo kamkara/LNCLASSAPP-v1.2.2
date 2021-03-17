@@ -6,9 +6,15 @@
     <%= render "layouts/shared/headers" %>
   </head>
 
-  <body class="bg-gray-200">
+  <body class="bg-gray-300 font-sans leading-normal tracking-normal">
     <%= render "layouts/shared/noticed" %>
-    <%= render "shared/nav/navbar" %>
     <%= yield %>
   </body>
+  <!-- navbar script -->
+  <script>
+		//Javascript to toggle the menu
+		document.getElementById('nav-toggle').onclick = function(){
+			document.getElementById("nav-content").classList.toggle("hidden");
+		}
+	</script>
 </html>
