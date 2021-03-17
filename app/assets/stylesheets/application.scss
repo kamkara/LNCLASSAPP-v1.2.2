@@ -19,6 +19,8 @@
 // ActionText
 @import "trix/dist/trix";
 @import "editors/actiontext";
-@import "validates/forms";
-@import "validates/flash_message";
+@import "forms/forms";
+@import "forms/flash_message";
 @import "nav/navbar";
+@import "administrations/admin";
+//@import " ";

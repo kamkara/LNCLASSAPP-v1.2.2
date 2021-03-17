@@ -1,8 +1,9 @@
 
 <% if current_user.role === "teacher"  %>
 <!-- prof dashbaord-->
-<% content_for @title="Espace Prof" %>
-<%= render "dashboard/shared/profs/sidebar" %>
+<% content_for @title="Espace Enseignant" %>
+<%= render "dashboard/shared/teachers/aside" %>
+<%= render "dashboard/shared/teachers/admin_main" %>
 <% else %>
 <!-- team dashbaord-->
 <% content_for @title="Espace Team" %>
