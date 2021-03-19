@@ -18,7 +18,7 @@ require("channels")
  const images = require.context('../images', true)
  const imagePath = (name) => images(name, true)
 import "../css/application.css"
-import "../charts/chart.js"
+
 
 require("trix")
 require("@rails/actiontext")
