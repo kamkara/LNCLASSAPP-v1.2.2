@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 2021_03_13_172602) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "action_text_rich_texts", force: :cascade do |t|
+  create_table "action_text_rich_texts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
     t.string "record_type", null: false
-    t.bigint "record_id", null: false
+    t.uuid "record_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
