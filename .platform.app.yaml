@@ -27,7 +27,7 @@ hooks:
     build: |
       gem install bundler:2.2.8
       bundle install --without development test
-      RAILS_ENV=production bundle exec rake assets:precompile
+      
     deploy: |
       RAILS_ENV=production bundle exec rake db:migrate 
 
