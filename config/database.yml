@@ -83,7 +83,12 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: LNCLASSAPP_production
-  username: LNCLASSAPP
-  password: <%= ENV['LNCLASSAPP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: 5432
+  host: postgresdatabase.internal
+  database: main
+  username: main
+  password: main
+  
