@@ -12,9 +12,10 @@ class User < ApplicationRecord
   has_many :levels
   has_many :citytowns
   has_many :schools
+  has_one_attached :avatar
+
   #has_many :helps
   #has_many :exercices
- 
 
   ################  VALIDATIONS  ###########################
 def roles
