@@ -79,6 +79,7 @@ group :production do
  gem 'unicorn', '~> 5.8'
 end
 
+
 # Use Active Storage variant
  gem 'image_processing', '~> 1.2'
 
