@@ -25,7 +25,7 @@ disk: 1024
 
 hooks:
     build: |
-      bundle install --without development test
+      bundle install
       
     deploy: |
       RAILS_ENV=production bundle exec rake db:migrate 
