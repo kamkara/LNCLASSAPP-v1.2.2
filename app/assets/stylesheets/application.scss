@@ -16,9 +16,10 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "rails_bootstrap_forms";
+@import "editors/actiontext";
+
 // ActionText
 @import "trix/dist/trix";
-@import "editors/actiontext";
 @import "forms/forms";
 @import "forms/flash_message";
 @import "nav/navbar";
