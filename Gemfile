@@ -12,7 +12,6 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.2', '>= 5.2.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,9 +23,15 @@ gem 'jbuilder', '~> 2.7'
 
 
 
+gem 'webpacker', '~> 5.2', '>= 5.2.1'
 ################## STYLES ###############
 gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
 gem 'bootstrap', '~> 5.0.0.beta2'
+group :production do
+# Use Unicorn as the app server
+ gem 'rack-timeout', '~> 0.6.0'
+ gem 'unicorn', '~> 5.8'
+end
 
 
 ########### FORMS ###############
@@ -73,11 +78,6 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 #gem 'devise-i18n-views', '~> 0.3.7'
 #gem 'devise_invitable', '~> 2.0', '>= 2.0.3'
 
-group :production do
-# Use Unicorn as the app server
- gem 'rack-timeout', '~> 0.6.0'
- gem 'unicorn', '~> 5.8'
-end
 
 
 # Use Active Storage variant
