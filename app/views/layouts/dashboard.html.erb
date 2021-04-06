@@ -8,7 +8,18 @@
 
   <body class="bg-gray-100 font-family-karla flex">
     <%= render "layouts/shared/noticed" %>
-    <%= render "dashboard/shared/teachers/aside" %>
+ 
+   <!--  j'ai preferé dupliquer le code ici pour faciliter la maintenance-->
+    <% if current_user.role === "teacher"  %>
+        <!-- teacher dashbaord-->
+        <% content_for @title="Espace Enseignant" %>
+        <%= render "dashboard/shared/teachers/aside" %>  
+    <% elsif current_user.role == "team" %>
+        <!-- teacher dashbaord-->
+        <% content_for @title="ADMINISTRATION" %>
+        <%= render "dashboard/shared/teams/aside" %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
